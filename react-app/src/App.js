@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Anshul from './Anshul';
+import Class from './Class';
 
 function App() {
   return (
     <div className="App">
-     <Anshul className="CS70" professor="Rao"/>
+      <h1> *INSERT TITLE HERE* </h1>
+     <Class className="CS70" professor="Rao" description = "Discrete Math and Probability Theory"/>
     </div>
   );
 }
