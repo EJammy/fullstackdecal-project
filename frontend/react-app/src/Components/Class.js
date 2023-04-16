@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import Review from './Review'
 
 function ClassRect({ className, professor, description}) {
   return (
@@ -12,7 +13,8 @@ function ClassRect({ className, professor, description}) {
       <h2>Class: {className}</h2>
       <p>Professor: {professor}</p>
       <p>Class Description:{description}</p>
-      <Button></Button>
+      <Review></Review>
+      
     </div>
   );
 }
