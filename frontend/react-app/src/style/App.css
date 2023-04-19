@@ -1,0 +1,17 @@
+
+#title_area{
+    background-color: lightblue;
+    text-align: center; 
+    font-size: 40px;
+    margin-top: -70px;
+    
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .my-div {
+    margin-top: 0;
+  }

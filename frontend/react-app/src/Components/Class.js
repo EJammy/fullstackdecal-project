@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Review from './Review'
-import boxDesign from '../Styles/Class.css';
+
 import Frame from './Frame'
 
 function ClassRect({ className, professor, description}) {

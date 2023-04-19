@@ -3,17 +3,16 @@ import Post from "./Post";
 
 import axios from "axios";
 
-const Feed = () => {
-  //Un-comment the lines below to complete your solution
-  // ====================
+const Frame = () => {
+  
 
    const [data, setData] = useState();
 
    const getPostsData = () => {
      axios
-       .get("http://localhost:3002/posts") //THIS IS YOUR URL OF YOUR API
-       .then((val) => setData(val.data)) //PROMISE API, THAT MEANS WHEN YOU GET THE DATA WHAT DO I DO WITH IT
-       .catch((error) => console.log(error));  //ERROR CATCHING IN CASE WE RECIEVE AN ERROR
+       .get("http://localhost:3002/posts") 
+       .then((val) => setData(val.data)) 
+       .catch((error) => console.log(error));  
    };
 
    useEffect(() => {
@@ -39,4 +38,4 @@ const Feed = () => {
 }
 
 
-export default Feed;
+export default Frame;
