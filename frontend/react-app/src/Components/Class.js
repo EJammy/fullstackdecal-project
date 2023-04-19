@@ -1,17 +1,16 @@
 import React from 'react';
 import Button from './Button';
 import Review from './Review'
+import '../Styles/Class.css'
+
 
 import Frame from './Frame'
 
 function ClassRect({ className, professor, description}) {
   return (
-    <div style = {{width: '400px', 
-    height: 'auto',
-    border: '1px solid black', 
-    padding: '10px',
-    }} >
-      <h2>Class: {className}</h2>
+    <div id = 'boxDesign' >
+      <div id = "classStyle">
+      <h2>Class: {className}</h2></div>
       <p>Professor: {professor}</p>
       <p>Class Description:{description}</p>
       <h3> Reviews </h3>

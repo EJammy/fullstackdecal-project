@@ -1,4 +1,4 @@
-import './style/App.css'
+import './App.css'
 import Class from './Components/Class';
 
 
@@ -11,7 +11,7 @@ function App() {
       <h1> Class Reviewer </h1>
       </div>
      <Class className="CS70" professor="Rao" description = " Discrete Math and Probability Theory"/>  
-     <Class className="CS61B" professor="Hug" description = " Data Structures and Algorithms"/>  
+      
     </div>
   );
 }

@@ -1,0 +1,16 @@
+#boxDesign{
+    width: 400px; 
+    height: auto;
+    border: 1px solid black; 
+    padding: 10px;
+    
+}
+
+#classStyle{
+    background-color: gray;
+    height:40px;
+    margin-top: -7.5%;
+    margin-left: -2.5%;
+    margin-right: -2.5%;
+    text-align: center;
+}
