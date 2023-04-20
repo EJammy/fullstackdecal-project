@@ -1,18 +1,30 @@
 const express = require("express");
+ const user = require("./routes/user");
+ const InitiateMongoServer = require("./config/db");
+
+ //Initiate Mongo Server
+ InitiateMongoServer();
 
 const app = express();
 
-const port = process.env.PORT || 4000;
+// PORT
+const PORT = process.env.PORT || 4000;
+
+// Middleware
 app.use(express.json());
 
-// TODO: Use CORS??
-
 app.get("/", (req, res) => {
-    res.json({ message: "API Working" });
+  res.json({ message: "API Working" });
 });
 
-app.use("/user", require("./routes/user"))
+// /**
+//  * Router Middleware
+//  * Router - /user/*
+//  * Method - *
+//  */
 
-app.listen(port, () => {
-	console.log(`Listening on port ${port}`);
+app.use("/user", user);
+
+app.listen(PORT, (req, res) => {
+  console.log(`Server Started at PORT ${PORT}`);
 });
