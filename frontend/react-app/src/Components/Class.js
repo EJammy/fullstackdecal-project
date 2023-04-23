@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/Class.css';
 
 
-function ClassRect({ className, professor, description }) {
+function ClassRect({ className, description }) {
 
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
@@ -16,12 +16,14 @@ function ClassRect({ className, professor, description }) {
     setInputValue("");
   };
 
+
+
+
   return (
     <div id="boxDesign">
       <div id="classStyle">
         <h2>Class: {className}</h2>
       </div>
-      <p>Professor: {professor}</p>
       <p>Class Description: {description}</p>
       <h3> Reviews </h3>
 
