@@ -1,0 +1,13 @@
+.rowC{
+    display:flex; 
+    flex-direction:row;
+  }
+  
+
+#title_area{
+    background-color: lightblue;
+    text-align: center; 
+    font-size: 40px;
+    margin-top: -70px;
+    
+  }

@@ -1,5 +1,9 @@
 import './App.css'
 import Class from './Components/Class';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LoginPage from './Components/LoginPage';
+import { Routes } from 'react-router-dom';
+import Home from './Components/Home';
 
 
 
@@ -7,11 +11,14 @@ import Class from './Components/Class';
 function App() {
   return (
     <div className="App">
-      <div className = "my_div" id = "title_area">
-      <h1> Class Reviewer </h1>
-      </div>
-     <Class className="CS70" professor="Rao" description = " Discrete Math and Probability Theory"/>  
-     <Class className="CS61a" professor="DeNero" description = "Structure and Interpretation of Computer Programs"/>  
+  
+    <Router>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/home" element={<Home />} />
+    </Routes>
+    </Router>
+  
       
     </div>
   );
