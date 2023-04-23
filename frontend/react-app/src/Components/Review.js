@@ -25,6 +25,7 @@ class Review extends React.Component {
       return (
         <form>
             <label>Review: </label>
+            
             <input type = "text" id = "Review"></input>
             <input type="submit"></input>
         </form>

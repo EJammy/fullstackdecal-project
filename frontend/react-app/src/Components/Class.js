@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Styles/Class.css';
-import Frame from './Frame';
+
 
 function ClassRect({ className, professor, description }) {
 
@@ -25,8 +25,10 @@ function ClassRect({ className, professor, description }) {
       <p>Class Description: {description}</p>
       <h3> Reviews </h3>
 
+      <div className='rowC'>
       <textarea value={inputValue} onChange={handleInputChange} />
-      <button id = "review_button" onClick={handleOutputClick}>Output Text</button>
+      <button id = "review_button" onClick={handleOutputClick}> Submit</button>
+      </div>
       <p style={{ whiteSpace: "pre-wrap" }}>{outputValue}</p>
     </div>
   );
