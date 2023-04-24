@@ -3,6 +3,7 @@ const express = require("express");
  const comments = require("./routes/comments");
  const reviews = require("./routes/reviews");
  const InitiateMongoServer = require("./config/db");
+const classes = require("./routes/class")
 
  //Initiate Mongo Server
  InitiateMongoServer();
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
 app.use("/user", user);
 app.use("/comments", comments);
 app.use("/reviews", reviews);
+app.use("/class", classes);
 
 app.listen(PORT, (req, res) => {
   console.log(`Server Started at PORT ${PORT}`);
