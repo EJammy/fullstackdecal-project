@@ -13,7 +13,7 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  comments: {
+  classes: {
     type: Array,
     required: false,
   },
@@ -26,4 +26,5 @@ const UserSchema = mongoose.Schema({
 
 // export model user with UserSchema
 module.exports = mongoose.model("user", UserSchema);
-//module.exports = mongoose.model("shop", UserSchema);
+module.exports = mongoose.model("classes", UserSchema);
+module.exports = mongoose.model("reviews", UserSchema);

@@ -12,7 +12,7 @@ router.get('/list', auth, async (req, res) => {
       // TODO
       //const { username, email, password, reviews } = req.body;
       const user = await User.findById(req.user.id);
-      res.json(user.shoppinglist);
+      res.json(user.reviews);
     } catch (e) {
       res.send({ message: 'Error in Fetching user' });
     }
@@ -23,10 +23,10 @@ router.post("/add", auth, async (req, res) => {
     try {
       const user = await User.findById(req.user.id);
       //res.json(user);
-      if (user.shoppinglist.indexOf(req.body.item) == -1) {
-        user.shoppinglist.push(req.body.item);
+      if (user.reviews.indexOf(req.body.item) == -1) {
+        user.reviews.push(req.body.item);
         user.save();
-        res.json(user.shoppinglist);
+        res.json(user.reviews);
       }
     } catch (e) {
       res.send({ message: "Error in Fetching user" });
@@ -40,14 +40,14 @@ router.post("/add", auth, async (req, res) => {
       //res.json(user);
     
       //res.json.log(itemIndex);
-      if (user.shoppinglist.indexOf(req.body.item) != -1) {
-        user.shoppinglist.splice(user.shoppinglist.indexOf(req.body.item), 1);
+      if (user.reviews.indexOf(req.body.item) != -1) {
+        user.reviews.splice(user.reviews.indexOf(req.body.item), 1);
         user.save();
-        res.json(user.shoppinglist);
+        res.json(user.reviews);
       }
-    //await user.shoppinglist.deleteOne(req.body.item);
+    //await user.reviews.deleteOne(req.body.item);
     //user.save();
-    //res.json(user.shoppinglist);
+    //res.json(user.reviews);
     } catch (e) {
       res.send({ message: "Error in Fetching user" });
     }

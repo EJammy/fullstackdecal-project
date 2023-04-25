@@ -1,4 +1,3 @@
-/*
 const express = require("express");
 const { check, validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
@@ -11,9 +10,9 @@ const auth = require('../middleware/auth');
 router.get('/list', auth, async (req, res) => {
     try {
       // TODO
-      //const { username, email, password, comments } = req.body;
+      //const { username, email, password, classes } = req.body;
       const user = await User.findById(req.user.id);
-      res.json(user.comments);
+      res.json(user.classes);
     } catch (e) {
       res.send({ message: 'Error in Fetching user' });
     }
@@ -24,10 +23,10 @@ router.post("/add", auth, async (req, res) => {
     try {
       const user = await User.findById(req.user.id);
       //res.json(user);
-      if (user.comments.indexOf(req.body.item) == -1) {
-        user.comments.push(req.body.item);
+      if (user.classes.indexOf(req.body.item) == -1) {
+        user.classes.push(req.body.item);
         user.save();
-        res.json(user.comments);
+        res.json(user.classes);
       }
     } catch (e) {
       res.send({ message: "Error in Fetching user" });
@@ -41,18 +40,18 @@ router.post("/add", auth, async (req, res) => {
       //res.json(user);
     
       //res.json.log(itemIndex);
-      if (user.comments.indexOf(req.body.item) != -1) {
-        user.comments.splice(user.comments.indexOf(req.body.item), 1);
+      if (user.classes.indexOf(req.body.item) != -1) {
+        user.classes.splice(user.classes.indexOf(req.body.item), 1);
         user.save();
-        res.json(user.comments);
+        res.json(user.classes);
       }
-    //await user.comments.deleteOne(req.body.item);
+    //await user.classes.deleteOne(req.body.item);
     //user.save();
-    //res.json(user.comments);
+    //res.json(user.classes);
     } catch (e) {
       res.send({ message: "Error in Fetching user" });
     }
   });
 
   module.exports = router;
-*/
+

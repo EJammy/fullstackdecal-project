@@ -1,3 +1,4 @@
+/**
 const express = require("express");
 const { check, validationResult } = require("express-validator");
 const router = express.Router();
@@ -8,6 +9,7 @@ const fs = require('fs');
 
 // Parses course list from a json file in the disk
 // written with the help of chatGPT
+
 fs.readFile('courseList.json', 'utf8', (err, data) => {
   if (err) {
     console.error(err);
@@ -30,9 +32,10 @@ fs.readFile('courseList.json', 'utf8', (err, data) => {
     let newClass = new Class({ name: className, professor: "n/a", description: description});
     newClass.save();
   }
-});
+//});
 
 
 // TODO: class api
 
 module.exports = router
+*/
