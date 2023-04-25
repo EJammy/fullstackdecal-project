@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/LoginPage.css';
+import axios from 'axios';
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -9,12 +10,16 @@ function LoginPage() {
   const [password, setPassword] = useState('');
 
   function handleLogin() {
-    // Your authentication logic here
-    if (email === 'user@example.com' && password === 'password') {
-      navigate('/home');
-    } else {
-      alert('Invalid email, username, or password');
-    }
+    axios.post("http://localhost:1234/user/login", { email, password })
+      .then(response => {
+        const token = response.data.token;
+        navigate('/home');
+      })
+      .catch(
+        err => {
+          console.log(err);
+          alert('Invalid email, username, or password');
+        });
   }
 
   return (
