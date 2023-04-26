@@ -25,7 +25,7 @@ function Signup() {
 
   return (
     <div className="login-page">
-      <h2>Login Page</h2>
+      <h2>Sign Up</h2>
       <form onSubmit={(e) => { e.preventDefault(); handleSignup(); }}>
         <div>
           <label htmlFor="username">Username:</label>
@@ -39,7 +39,7 @@ function Signup() {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <button type="submit">Log In</button>
+        <button type="submit">Create Account</button>
       </form>
     </div>
   );
