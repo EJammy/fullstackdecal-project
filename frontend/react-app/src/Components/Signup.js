@@ -20,6 +20,7 @@ function Signup() {
         err => {
           console.log(err);
           alert(err.response.data.msg);
+          navigate('/home');
         });
   }
 

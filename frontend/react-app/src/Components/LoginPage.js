@@ -36,7 +36,7 @@ function LoginPage() {
         </div>
         <button type="submit">Log In</button>
       </form>
-      <a href='/signup'>signup</a>
+      <a href='/signup'>Sign Up For an Account!</a>
     </div>
   );
 }
