@@ -28,7 +28,7 @@ fs.readFile('courseList.json', 'utf8', (err, data) => {
     if (description == null) {
       description = "n/a";
     }
-    console.log(className, description);
+    // console.log(className, description);
     let newClass = new Class({ name: className, professor: "n/a", description: description});
     newClass.save();
   }

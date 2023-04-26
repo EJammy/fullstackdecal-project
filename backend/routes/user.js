@@ -25,6 +25,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({
         errors: errors.array(),
+        msg: errors.array()[0].msg,
       });
     }
 
@@ -99,14 +100,14 @@ router.post(
         email: email,
       });
       if (!user)
-        return res.status(400).json({
-          message: "User Not Exist",
+        return res.status(401).json({
+          msg: "User Not Exist",
         });
 
       const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch)
-        return res.status(400).json({
-          message: "Incorrect Password !",
+        return res.status(401).json({
+          msg: "Incorrect Password !",
         });
 
       const payload = {
@@ -133,7 +134,7 @@ router.post(
     } catch (e) {
       console.error(e);
       res.status(500).json({
-        message: "Server Error",
+        msg: "Server Error",
       });
     }
   }

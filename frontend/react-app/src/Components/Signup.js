@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import '../Styles/LoginPage.css';
 import axios from 'axios';
 
-function LoginPage() {
+function Signup() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleLogin() {
-    axios.post("http://localhost:1234/user/login", { email, password })
+  function handleSignup() {
+    axios.post("http://localhost:1234/user/signup", { username, email, password })
       .then(response => {
         const token = response.data.token;
         localStorage.setItem("token", token);
@@ -19,14 +19,14 @@ function LoginPage() {
       .catch(
         err => {
           console.log(err);
-          alert('Invalid email, username, or password');
+          alert(err.response.data.msg);
         });
   }
 
   return (
     <div className="login-page">
       <h2>Login Page</h2>
-      <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
+      <form onSubmit={(e) => { e.preventDefault(); handleSignup(); }}>
         <div>
           <label htmlFor="username">Username:</label>
           <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
@@ -41,9 +41,8 @@ function LoginPage() {
         </div>
         <button type="submit">Log In</button>
       </form>
-      <a href='/signup'>signup</a>
     </div>
   );
 }
 
-export default LoginPage;
+export default Signup;
